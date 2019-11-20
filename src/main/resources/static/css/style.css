@@ -1,0 +1,60 @@
+.page-header > h1 > a > i {
+  color: black;
+}
+
+.faqHeader {
+  font-size: 27px;
+  margin: 20px;
+}
+
+.panel-heading [data-toggle="collapse"]:after {
+  font-family: "Glyphicons Halflings";
+  content: "\e072"; /* "play" icon */
+  float: right;
+  color: #f58723;
+  font-size: 18px;
+  line-height: 22px;
+  /* rotate "play" icon from > (right arrow) to down arrow */
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.panel-heading [data-toggle="collapse"].collapsed:after {
+  /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  color: #454444;
+}
+
+#media-div {
+  position: fixed;
+  left: 0%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em;
+  padding: 0.5em;
+  background-color: #f58723;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+#media-div a {
+  color: white;
+  text-shadow: 0px 0px 2px black;
+}
+
+#media-div a:hover {
+  text-shadow: 0px 0px 3px black;
+}
+
+@media screen and (max-width: 1280px) {
+  #media-div {
+    display: none;
+  }
+}
