@@ -14,14 +14,14 @@ See [Configuration](#configuration)
 e.g
 
 ```
-docker run -p 8080:8080 --env private.group.id=12345 inseefrlab/adventofcodeleaderboard
+docker run -p 8080:8080 --env private_group_id=12345 inseefrlab/adventofcodeleaderboard
 ```
 
 ### Running from source
 
 ## <a name="configuration"></a>Configuration
 
-Configuration can be set through environment variables or by editing `application.properties` or `application-default.properties` files.  
+Configuration can be set through environment variables (make sure to replace `.` with `_`) or by editing `application.properties` or `application-default.properties` files.  
 Some parameters are mandatory.
 
 ### Auth Cookie (mandatory)
