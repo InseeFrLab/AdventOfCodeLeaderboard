@@ -13,7 +13,6 @@ public class DateService {
 
     public DateService(@Value("${date.format}") String dateFormat) {
         simpleDateFormat = new SimpleDateFormat(dateFormat);
-        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
     }
 
     public String formatDate(Long timestamp) {
