@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.TimeZone;
 
 @Service
 public class DateService {
@@ -12,6 +13,7 @@ public class DateService {
 
     public DateService(@Value("${date.format}") String dateFormat) {
         simpleDateFormat = new SimpleDateFormat(dateFormat);
+        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
     }
 
     public String formatDate(Long timestamp) {

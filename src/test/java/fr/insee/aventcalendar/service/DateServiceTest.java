@@ -12,14 +12,14 @@ class DateServiceTest {
     public void shallGetEqualString() {
         Long timestamp = Long.valueOf(0);
         DateService ds = new DateService("dd/MM/yyyy HH:mm:ss");
-        assertEquals("01/01/1970 01:00:00", ds.formatDate(timestamp));
+        assertEquals("01/01/1970 00:00:00", ds.formatDate(timestamp));
     }
 
     @Test
     public void shallGetSameString() {
         Long timestamp = Long.valueOf(0);
         DateService ds = new DateService("MM - dd - yyyy, HH : mm : ss");
-        assertEquals("01 - 01 - 1970, 01 : 00 : 00", ds.formatDate(timestamp));
+        assertEquals("01 - 01 - 1970, 00 : 00 : 00", ds.formatDate(timestamp));
     }
 
 }
