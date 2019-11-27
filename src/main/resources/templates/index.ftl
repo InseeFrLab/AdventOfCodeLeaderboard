@@ -32,6 +32,15 @@
         <!-- Bootstrap FAQ - START -->
         <div class="container">
             <div class="alert alert-warning" role="alert">
+                <div id="year-links">
+                    <#list 2015..(.now?string('yyyy')?number) as idx_year>
+                        <#if idx_year == year?number>
+                            <span>${idx_year?c}</span>
+                        <#else>
+                            <a href="?year=${idx_year?c}">${idx_year?c}</a>
+                        </#if>
+                    </#list>
+                </div>
                 <h2 class="text-center" style="display: inline">Challenge INSEE ${year!'2018'}</h2>
                 <table class="table" style="margin-top: 3em">
                     <tr><th></th><th>Joueur</th><th>Etoiles (énigmes résolues)</th><th>Score (rapidité)</th></tr>
