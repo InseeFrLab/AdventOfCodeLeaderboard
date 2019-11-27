@@ -1,3 +1,17 @@
+#year-links {
+  text-align: right;
+  width: 100%;
+  position: relative;
+}
+
+#year-links > * {
+  margin: 0 0.3em;
+}
+
+#year-links > span {
+  font-weight: bold;
+}
+
 .page-header > h1 > a > i {
   color: black;
 }
