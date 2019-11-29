@@ -37,8 +37,16 @@ Default : ``
 This is the id of the leaderboard you want to display. You can get it from the `private leaderboard` page. Something like `https://adventofcode.com/YEAR/leaderboard/private/view/LEADERBOARD_ID`
 
 Key : `private.group.id`  
-Exemple : `12345`  
+Example : `12345`  
 Default : ``
+
+### Override Q & A (optional)
+
+You can override the Q & A informations by setting the `qanda.location` property.
+
+Key : `qanda.location`  
+Example : `file:/home/user/customQandA.json`  
+Default : `classpath:public/json/QandA.json`
 
 ### Proxy configuration (optional)
 
@@ -46,15 +54,15 @@ The app needs to access `adventofcode.com` to get the leaderboard data.
 If you are using it behind a proxy, you can configure it using the following parameters :
 
 Key : `proxy.host`  
-Exemple : `12345`  
+Example : `12345`  
 Default : `proxy.corporation.com`
 
 Key : `proxy.port`  
-Exemple : `8080`  
+Example : `8080`  
 Default : ``
 
 Key : `proxy.use`  
-Exemple : `true`  
+Example : `true`  
 Default : `false`
 
 ## Problem / Question ?

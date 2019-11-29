@@ -1,0 +1,24 @@
+{
+  "categories" : [
+    {
+      "category" : "Participer",
+      "questions" : [
+        {
+          "id" : "participer-1",
+          "question" : "Comment participer ?",
+          "answer" : "Le challenge se déroule directement sur le site de <a href=\"https://adventofcode.com\">Advent of code</a>.<br />\n                Il s'agit d'un petit site gratuit qui propose, chaque jour du 1er au 25 décembre (à 6h du matin heure française), un problème d'algorithmie à résoudre.<br />\n                Le problème vous est présenté et un jeu de données personnel vous est crée. A vous d'écrire l'algorithme et de le faire tourner sur le jeu de données.<br />\n                Une fois le résultat obtenu, il suffit de le valider dans l'interface. Le site vous dira si oui ou non le résultat est correct."
+        }
+      ]
+    },
+    {
+      "category" : "Règles",
+      "questions" : [
+        {
+          "id" : "regles-1",
+          "question" : "Quel langage est ce que je peux utiliser ?",
+          "answer" : "AdventOfCode n'impose pas de langage.<br />\n                    C'est une excellente occasion pour tester de nouveaux langages."
+        }
+      ]
+    }
+  ]
+}
