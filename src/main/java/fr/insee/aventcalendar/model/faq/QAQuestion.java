@@ -4,6 +4,7 @@ public class QAQuestion {
 
     private String question;
     private String answer;
+    private String id;
 
     public String getQuestion() {
         return question;
@@ -19,5 +20,13 @@ public class QAQuestion {
 
     public void setAnswer(String answer) {
         this.answer = answer;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
