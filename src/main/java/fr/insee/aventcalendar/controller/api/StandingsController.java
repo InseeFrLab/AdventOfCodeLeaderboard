@@ -1,4 +1,4 @@
-package fr.insee.aventcalendar.controller;
+package fr.insee.aventcalendar.controller.api;
 
 import fr.insee.aventcalendar.model.User;
 import fr.insee.aventcalendar.service.UserService;
@@ -12,8 +12,8 @@ import java.io.IOException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
-public class APIController {
+@RequestMapping("/api/standings")
+public class StandingsController {
 
     @Autowired
     private UserService userService;

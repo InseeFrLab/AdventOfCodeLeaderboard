@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8" />
-    <title>Calendrier de l'avent INSEE</title>
+    <title>Calendrier de l'avent</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
@@ -41,7 +41,7 @@
                         </#if>
                     </#list>
                 </div>
-                <h2 class="text-center" style="display: inline">Challenge INSEE ${year!'2018'}</h2>
+                <h2 class="text-center" style="display: inline">Challenge ${year!'2019'}</h2>
                 <table class="table" style="margin-top: 3em">
                     <tr><th></th><th>Joueur</th><th>Etoiles (énigmes résolues)</th><th>Score (rapidité)</th></tr>
                     <#list persons as user>
