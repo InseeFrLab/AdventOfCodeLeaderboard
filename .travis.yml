@@ -1,0 +1,22 @@
+language: java
+jdk:
+  - openjdk11
+services:
+  - docker
+before_install:
+  - mvn -B versions:set -DnewVersion=$TRAVIS_BRANCH
+script:
+  - mvn -B package
+  - docker build -t inseefrlab/adventofcodeleaderboard .
+deploy:
+  skip_cleanup: true
+  provider: script
+  script:
+    echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+    && docker push inseefrlab/adventofcodeleaderboard
+  on:
+    branch: master
+env:
+  global:
+    - secure: uaL+HRZRl0nasBMHeBtgJHSY4I4gucYVwi/8M0+n950hHkPya0ADcKAe3vYqJU10NTKAr4NPPiyXW7Oz0WHBQ7NZr+hGszYBNcQIr0gal0f3WJf3sk76YdASx1TQKgbzOx2Otoqw5zoM5j/7EWVv0WKoXFJ3e5+XZvlZK2PAOpZnRcvZ+3kvgUtEwjBoGJG+qDpDfNRwHbDun/JdRnss3mHa7nClgegks36eSYSgWlyHEjnuVs7fX0H5/DJ4d7YKztg1au0gHNcZR46Kuk/uk2Ko+U9n5vEz4ZxZ/RomorjIqoXNSTjKSPlrQLIH3+qLwNRme/whTX5lhA/DRYR1Qu/ITL7YhHrABbqrj5uqzh+ezT4M0WHXE6LlGn0R6HB1+jBemh1aYIR6ve7eUPw4SBdjAHgw53Pv+PGtSAWhQaWpZTcsvkj6Xl11m7yT3FploLgqNnJNKp4RFstKhOfhTYMH3Ta28pZNc5MAIGB/SDJzOEW9A6PQu9FBy0S+WZrkyQ96/YDhNVAKF6xPPyuJcDO+9p58o+9PtUeYoMuXbemaHpkwMM98lFdt9jr45KKo/tLv3qfCdFgv+tU2spvShSqa8oJaOMaiTXbJ20U0m6VJGJfQUVbinJgfD5pFcSwmazbEoydvGYHAYIKVGpeWRXEqRz6WmSZ5S30ssKp1uwI=
+    - secure: rtRrPJ+XFhlCLOIUm7epcH+1K7J4G4K7ttjdZ6dGy+qrtTjGzMlM9Uqj6+ZHQ20YvpsoAmiDxtrd/j0QIrw9zwYVZ6wpVjvscpH1xehS9X0UyZ7IEDWCPcZuGyEcP0hVlMECuUlmo+WV7fd8kr3/+WaY2RN0f/dYP+5jafbH2/TdtFU0OXMcrG92i9iSLTmCwpYIMDJSXtHVt+yBXOzcyIT9ExmAOPdD/D/F2cwjCF4Ie6oSZAusu5AM5em+HPGM2qixnKidOcrE3DUjL76qfXcqQIFx0zdKFNNBu8eKCX1rJxOGRi592fO3U2afZcdxtT7Be97IuW+d0ppKd3xMW2aNHntCI8W8QTVSwav1iHtPmX6h/aARUPr8/gTPWUptESyKF0tRm6W1bKG/C0aK0eUtkWpSHMeTyhpo4c0k4obOYRKSMf2fV9sNb1yaivp/qB1NDeaAjcmPn7jlISZP6yM/dBsLT5vMf6/xbot+lD7ywZwhCWhATd1oYIRgLiVnaw7Pixusf061KBr83Zi3KU5nBwdxB7nTdIxoPj21hLPqAvUTug38is3cUTtL/MhpVvPvmDUZO+KVBprcCdb1vIxx/rzxgT6YKUxsPRbUdspCT/jwiMpQgB+379dHBYjSH2mhBREb7yhukHWk1ZtACHEgB8T0+oO1hg0UhOAZIY4=
