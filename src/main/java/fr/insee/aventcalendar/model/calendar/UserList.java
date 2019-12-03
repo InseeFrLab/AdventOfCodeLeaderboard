@@ -1,4 +1,4 @@
-package fr.insee.aventcalendar.model;
+package fr.insee.aventcalendar.model.calendar;
 
 import java.util.ArrayList;
 import java.util.Comparator;

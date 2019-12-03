@@ -1,6 +1,7 @@
 package fr.insee.aventcalendar.controller;
 
 import fr.insee.aventcalendar.service.DateService;
+import fr.insee.aventcalendar.service.MediaSectionService;
 import fr.insee.aventcalendar.service.QAndAService;
 import fr.insee.aventcalendar.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,12 +24,16 @@ public class MainController {
     @Autowired
     private QAndAService qAndAService;
 
+    @Autowired
+    private MediaSectionService mediaSectionService;
+
     @GetMapping
     public String hello(Model model, @RequestParam(defaultValue = "2019") String year) throws IOException {
         model.addAttribute("persons", userService.getUserList(year));
         model.addAttribute("dateService", dateService);
         model.addAttribute("year", year);
         model.addAttribute("qanda", qAndAService.getQandA());
+        model.addAttribute("mediaSection", mediaSectionService.getMediaSection());
         return "index";
     }
 
