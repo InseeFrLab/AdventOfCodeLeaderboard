@@ -20,13 +20,17 @@
             <h1 class="text-center">Calendrier de l'avent du code</h1>
         </div>
         <div id="media-div">
-            <div>
-                <a href="#"><i class="fab fa-rocketchat"></i></a>
-            </div>
-            <hr>
-            <div>
+            <#list mediaSection.medias as media>
+                <#if media?index gt 0>
+                    <hr>
+                </#if>
+                <div>
+                    <a href="${media.link}"><i class="${media.icon}"></i></a>
+                </div>
+            </#list>
+<!--            <div>
                 <a href="https://github.com/InseeFrLab/AdventOfCodeLeaderboard"><i class="fab fa-github"></i></a>
-            </div>
+            </div>-->
         </div>
 
         <!-- Bootstrap FAQ - START -->

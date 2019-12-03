@@ -1,7 +1,5 @@
 package fr.insee.aventcalendar.model.faq;
 
-import com.fasterxml.jackson.annotation.JsonRootName;
-
 import java.util.List;
 
 public class QandA {

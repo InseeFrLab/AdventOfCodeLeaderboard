@@ -1,6 +1,6 @@
 package fr.insee.aventcalendar.controller.api;
 
-import fr.insee.aventcalendar.model.User;
+import fr.insee.aventcalendar.model.calendar.User;
 import fr.insee.aventcalendar.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

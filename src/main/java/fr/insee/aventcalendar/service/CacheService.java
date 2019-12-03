@@ -2,7 +2,7 @@ package fr.insee.aventcalendar.service;
 
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
-import fr.insee.aventcalendar.model.UserList;
+import fr.insee.aventcalendar.model.calendar.UserList;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 

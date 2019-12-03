@@ -1,6 +1,6 @@
 package fr.insee.aventcalendar.dao;
 
-import fr.insee.aventcalendar.model.UserList;
+import fr.insee.aventcalendar.model.calendar.UserList;
 
 import java.io.IOException;
 

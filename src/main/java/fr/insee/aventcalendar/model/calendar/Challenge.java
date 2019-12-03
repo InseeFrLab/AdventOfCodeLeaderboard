@@ -1,4 +1,4 @@
-package fr.insee.aventcalendar.model;
+package fr.insee.aventcalendar.model.calendar;
 
 public class Challenge {
     private Integer get_star_ts;
