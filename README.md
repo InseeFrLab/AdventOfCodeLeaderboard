@@ -48,6 +48,14 @@ Key : `qanda.location`
 Example : `file:/home/user/customQandA.json`  
 Default : `classpath:public/json/QandA.json`
 
+### Override Media Section (optional)
+
+You can override the medias' section's informations by setting the `mediaSection.location` property.
+
+Key : `mediaSection.location`  
+Example : `file:/home/user/customMediaSection.json`  
+Default : `classpath:public/json/media.json`
+
 ### Proxy configuration (optional)
 
 The app needs to access `adventofcode.com` to get the leaderboard data.  
