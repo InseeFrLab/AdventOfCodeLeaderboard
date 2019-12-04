@@ -1,0 +1,8 @@
+{
+  "languages": {
+    "python": "#336e9e",
+    "java": "#ea2d2e",
+    "haskell": "#999",
+    "default": "black"
+  }
+}

@@ -11,6 +11,7 @@
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/language-pills.css" />
 </head>
 <body>
 
@@ -50,7 +51,7 @@
                     <tr><th></th><th>Joueur</th><th>Etoiles (énigmes résolues)</th><th>Score (rapidité)</th></tr>
                     <#list persons as user>
                         <tr>
-                            <td>${user?index + 1}</td>
+                            <td id="${user.id}"">${user?index + 1}</td>
                             <td>
                                 <#if user.link??>
                                     <a href="${user.link}">${user.username!"Anonyme"+user.id}</a>
@@ -58,7 +59,7 @@
                                     <span>${user.username!"Anonyme"+user.id}</span>
                                 </#if>
                                 <#if user.language??>
-                                    <span class="badge badge-pill badge-primary" style="background-color: black">${user.language}</span>
+                                    <span class="badge badge-pill badge-primary" style="background-color: ${languageStyle.style[user.language?lower_case]!languageStyle.style["default"]}">${user.language}</span>
                                 </#if>
                             </td>
                             <td>
