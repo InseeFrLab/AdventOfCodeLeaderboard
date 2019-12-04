@@ -2,7 +2,10 @@
   "profiles": {
     "123456789": {
       "link": "https://github.com/123456789",
-      "language": "Java"
+      "language": {
+        "2019": "Java",
+        "2018": "Javascript"
+      }
     }
   }
 }

@@ -57,8 +57,8 @@
                                 <#else>
                                     <span>${user.username!"Anonyme"+user.id}</span>
                                 </#if>
-                                <#if profiles.profiles[user.id]?? && profiles.profiles[user.id].language??>
-                                    <span class="badge badge-pill badge-primary" style="background-color: ${languageStyle.style[profiles.profiles[user.id].language?lower_case]!languageStyle.style["default"]}">${profiles.profiles[user.id].language}</span>
+                                <#if profiles.profiles[user.id]?? && profiles.profiles[user.id].language?? && profiles.profiles[user.id].language[year]??>
+                                    <span class="badge badge-pill badge-primary" style="background-color: ${languageStyle.style[profiles.profiles[user.id].language[year]?lower_case]!languageStyle.style["default"]}">${profiles.profiles[user.id].language[year]}</span>
                                 </#if>
                             </td>
                             <td>
