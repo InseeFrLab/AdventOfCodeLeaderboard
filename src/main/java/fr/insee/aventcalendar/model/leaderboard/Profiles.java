@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class Profiles {
     private Map<String, String> language;
-    private String link;
+    private Map<String, String> link;
 
     public Map<String, String> getLanguage() {
         return language;
@@ -14,11 +14,11 @@ public class Profiles {
         this.language = language;
     }
 
-    public String getLink() {
+    public Map<String, String> getLink() {
         return link;
     }
 
-    public void setLink(String link) {
+    public void setLink(Map<String, String> link) {
         this.link = link;
     }
 }

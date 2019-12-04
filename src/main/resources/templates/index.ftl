@@ -50,10 +50,10 @@
                     <tr><th></th><th>Joueur</th><th>Etoiles (énigmes résolues)</th><th>Score (rapidité)</th></tr>
                     <#list persons as user>
                         <tr>
-                            <td id="${user.id}"">${user?index + 1}</td>
+                            <td id="${user.id}">${user?index + 1}</td>
                             <td>
-                                <#if profiles.profiles[user.id]?? && profiles.profiles[user.id].link??>
-                                    <a href="${profiles.profiles[user.id].link}">${user.username!"Anonyme"+user.id}</a>
+                                <#if profiles.profiles[user.id]?? && profiles.profiles[user.id].link?? && profiles.profiles[user.id].link[year]??>
+                                    <a href="${profiles.profiles[user.id].link[year]}">${user.username!"Anonyme"+user.id}</a>
                                 <#else>
                                     <span>${user.username!"Anonyme"+user.id}</span>
                                 </#if>
