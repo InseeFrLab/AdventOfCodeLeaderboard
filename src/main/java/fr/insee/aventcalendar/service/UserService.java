@@ -1,7 +1,7 @@
 package fr.insee.aventcalendar.service;
 
 import fr.insee.aventcalendar.dao.UserDAO;
-import fr.insee.aventcalendar.model.calendar.User;
+import fr.insee.aventcalendar.model.leaderboard.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

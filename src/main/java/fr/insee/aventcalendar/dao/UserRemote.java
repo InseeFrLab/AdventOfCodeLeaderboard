@@ -1,7 +1,7 @@
 package fr.insee.aventcalendar.dao;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import fr.insee.aventcalendar.model.calendar.UserList;
+import fr.insee.aventcalendar.model.leaderboard.UserList;
 import fr.insee.aventcalendar.service.CacheService;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;

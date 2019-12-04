@@ -50,15 +50,15 @@
                     <tr><th></th><th>Joueur</th><th>Etoiles (énigmes résolues)</th><th>Score (rapidité)</th></tr>
                     <#list persons as user>
                         <tr>
-                            <td>${user?index + 1}</td>
+                            <td id="${user.id}">${user?index + 1}</td>
                             <td>
-                                <#if user.link??>
-                                    <a href="${user.link}">${user.username!"Anonyme"+user.id}</a>
+                                <#if profiles.profiles[user.id]?? && profiles.profiles[user.id].link?? && profiles.profiles[user.id].link[year]??>
+                                    <a href="${profiles.profiles[user.id].link[year]}">${user.username!"Anonyme"+user.id}</a>
                                 <#else>
                                     <span>${user.username!"Anonyme"+user.id}</span>
                                 </#if>
-                                <#if user.language??>
-                                    <span class="badge badge-pill badge-primary" style="background-color: black">${user.language}</span>
+                                <#if profiles.profiles[user.id]?? && profiles.profiles[user.id].language?? && profiles.profiles[user.id].language[year]??>
+                                    <span class="badge badge-pill badge-primary" style="background-color: ${languageStyle.style[profiles.profiles[user.id].language[year]?lower_case]!languageStyle.style["default"]}">${profiles.profiles[user.id].language[year]}</span>
                                 </#if>
                             </td>
                             <td>

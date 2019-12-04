@@ -1,4 +1,4 @@
-package fr.insee.aventcalendar.model.calendar;
+package fr.insee.aventcalendar.model.leaderboard;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -64,4 +64,5 @@ public class User {
     public void setId(String id) {
         this.id = id;
     }
+
 }

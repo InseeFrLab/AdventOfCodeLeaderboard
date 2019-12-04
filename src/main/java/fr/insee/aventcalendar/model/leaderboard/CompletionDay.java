@@ -1,4 +1,4 @@
-package fr.insee.aventcalendar.model.calendar;
+package fr.insee.aventcalendar.model.leaderboard;
 
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 

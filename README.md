@@ -56,6 +56,22 @@ Key : `mediaSection.location`
 Example : `file:/home/user/customMediaSection.json`  
 Default : `classpath:public/json/media.json`
 
+### Override Users' Profile (optional)
+
+You can override the users' profile informations by setting the `profiles.location` property to your config file.
+
+Key : `profiles.location`  
+Example : `file:/home/user/customProfiles.json`  
+Default : `classpath:public/json/profiles.json`
+
+### Override Language Style (optional)
+
+You can override the languages' styles' configuration file's informations by setting the `languageStyle.location` property to your config file.
+
+Key : `languageStyle.location`  
+Example : `file:/home/user/customLanguageStyle.json`  
+Default : `classpath:public/json/languageStyle.json`
+
 ### Proxy configuration (optional)
 
 The app needs to access `adventofcode.com` to get the leaderboard data.  
