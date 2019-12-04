@@ -27,6 +27,9 @@ public class MainController {
     @Autowired
     private LanguageStyleService languageStyleService;
 
+    @Autowired
+    private ProfileService profileService;
+
     @GetMapping
     public String hello(Model model, @RequestParam(defaultValue = "2019") String year) throws IOException {
         model.addAttribute("persons", userService.getUserList(year));
@@ -35,6 +38,7 @@ public class MainController {
         model.addAttribute("qanda", qAndAService.getQandA());
         model.addAttribute("mediaSection", mediaSectionService.getMediaSection());
         model.addAttribute("languageStyle", languageStyleService.getLanguageStyle());
+        model.addAttribute("profiles", profileService.getUsersProfiles());
         return "index";
     }
 

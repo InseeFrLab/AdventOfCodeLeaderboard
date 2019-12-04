@@ -3,6 +3,9 @@
     "python": "#336e9e",
     "java": "#ea2d2e",
     "haskell": "#999",
+    "javascript": "#ee7e32",
+    "c": "#2850ad",
+    "r": "#2066b9",
     "default": "black"
   }
 }

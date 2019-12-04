@@ -53,13 +53,13 @@
                         <tr>
                             <td id="${user.id}"">${user?index + 1}</td>
                             <td>
-                                <#if user.link??>
-                                    <a href="${user.link}">${user.username!"Anonyme"+user.id}</a>
+                                <#if profiles.profiles[user.id]?? && profiles.profiles[user.id].link??>
+                                    <a href="${profiles.profiles[user.id].link}">${user.username!"Anonyme"+user.id}</a>
                                 <#else>
                                     <span>${user.username!"Anonyme"+user.id}</span>
                                 </#if>
-                                <#if user.language??>
-                                    <span class="badge badge-pill badge-primary" style="background-color: ${languageStyle.style[user.language?lower_case]!languageStyle.style["default"]}">${user.language}</span>
+                                <#if profiles.profiles[user.id]?? && profiles.profiles[user.id].language??>
+                                    <span class="badge badge-pill badge-primary" style="background-color: ${languageStyle.style[profiles.profiles[user.id].language?lower_case]!languageStyle.style["default"]}">${profiles.profiles[user.id].language}</span>
                                 </#if>
                             </td>
                             <td>
