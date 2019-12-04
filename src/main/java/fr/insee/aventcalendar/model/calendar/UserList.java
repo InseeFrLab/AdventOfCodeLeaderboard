@@ -25,7 +25,15 @@ public class UserList {
         result.sort(new Comparator<User>() {
             @Override
             public int compare(User user, User t1) {
-                return t1.getScore() - user.getScore();
+                return (t1.getStarNumber() - user.getStarNumber() != 0 ?
+                    t1.getStarNumber() - user.getStarNumber()
+                    :
+                    (t1.getScore() - user.getScore() != 0 ?
+                        t1.getScore() - user.getScore()
+                        :
+                        user.getUsername().toLowerCase().compareTo(t1.getUsername().toLowerCase())
+                    )
+                );
             }
         });
         return result;

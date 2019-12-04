@@ -16,4 +16,12 @@ public class CompletionDayList {
     public void setUnrecognizedFields(String key, CompletionDay value) {
             this.completionDayList.put(key, value);
     }
+
+    public Integer getSumStar() {
+        Integer result = 0;
+        for (Map.Entry<String, CompletionDay> day : completionDayList.entrySet()) {
+            result += day.getValue().getDayStarNumber();
+        }
+        return result;
+    }
 }

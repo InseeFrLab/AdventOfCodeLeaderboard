@@ -13,8 +13,12 @@ public class User {
     @JsonProperty("completion_day_level")
     private CompletionDayList completionDayLevel = null;
 
+    public Integer getStarNumber() {
+        return this.completionDayLevel.getSumStar();
+    }
+
     public String getUsername() {
-        return username;
+        return (this.username != null && !this.username.isEmpty()) ? this.username : "Anonyme" + this.id.toString();
     }
 
     public void setUsername(String username) {
