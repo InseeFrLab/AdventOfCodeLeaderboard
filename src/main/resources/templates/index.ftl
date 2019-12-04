@@ -11,7 +11,6 @@
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/language-pills.css" />
 </head>
 <body>
 
