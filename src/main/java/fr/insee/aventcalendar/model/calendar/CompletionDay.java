@@ -16,4 +16,8 @@ public class CompletionDay {
     public void setUnrecognizedFields(String key, Challenge value) {
             this.dayChallengeList.put(key, value);
     }
+
+    public Integer getDayStarNumber() {
+        return dayChallengeList.size();
+    }
 }
