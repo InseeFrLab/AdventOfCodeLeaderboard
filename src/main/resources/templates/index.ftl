@@ -47,7 +47,7 @@
                 </div>
                 <h2 class="text-center" style="display: inline">Challenge ${year!'2019'}</h2>
                 <table class="table" style="margin-top: 3em">
-                    <tr><th></th><th>Joueur</th><th>Etoiles (énigmes résolues)</th><th>Score (rapidité)</th></tr>
+                    <tr><th></th><th>Joueur</th><th>Etoiles (énigmes résolues)</th><th>Somme des étoiles</th><th>Score (rapidité)</th></tr>
                     <#list persons as user>
                         <tr>
                             <td id="${user.id}">${user?index + 1}</td>
@@ -78,6 +78,9 @@
                                         <span class="fa-star far" title="${idx} décembre"></span>
                                     </#if>
                                 </#list>
+                            </td>
+                            <td>
+                                <span>${user.getStarNumber() / 2}</span>
                             </td>
                             <td><span>${user.score?c}</span></td>
                         </tr>
