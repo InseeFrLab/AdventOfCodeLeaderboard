@@ -31,7 +31,7 @@ public class MainController {
     private ProfileService profileService;
 
     @GetMapping
-    public String hello(Model model, @RequestParam(defaultValue = "2019") String year) throws IOException {
+    public String hello(Model model, @RequestParam(defaultValue = "2020") String year) throws IOException {
         model.addAttribute("persons", userService.getUserList(year));
         model.addAttribute("dateService", dateService);
         model.addAttribute("year", year);
