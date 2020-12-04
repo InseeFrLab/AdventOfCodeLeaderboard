@@ -22,12 +22,7 @@ public class ProfileService {
     @Autowired
     private ObjectMapper mapper;
 
-    private UsersProfile profilesCache;
-
     public UsersProfile getUsersProfiles() throws IOException {
-        if (profilesCache != null) {
-            return profilesCache;
-        }
-        profilesCache =  mapper.readValue(resourceLoader.getResource(profilesLocation).getInputStream(), UsersProfile.class);
-        return profilesCache;
-    }}
+        return profilesCache =  mapper.readValue(resourceLoader.getResource(profilesLocation).getInputStream(), UsersProfile.class);
+    }
+}
