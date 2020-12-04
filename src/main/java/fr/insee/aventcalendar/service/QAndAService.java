@@ -21,13 +21,7 @@ public class QAndAService {
     @Autowired
     private ObjectMapper mapper;
 
-    private QandA quandACache;
-
     public QandA getQandA() throws IOException {
-        if (quandACache != null) {
-            return quandACache;
-        }
-        quandACache =  mapper.readValue(resourceLoader.getResource(qandALocation).getInputStream(), QandA.class);
-        return quandACache;
+        return mapper.readValue(resourceLoader.getResource(qandALocation).getInputStream(), QandA.class);
     }
 }
