@@ -23,6 +23,6 @@ public class ProfileService {
     private ObjectMapper mapper;
 
     public UsersProfile getUsersProfiles() throws IOException {
-        return profilesCache =  mapper.readValue(resourceLoader.getResource(profilesLocation).getInputStream(), UsersProfile.class);
+        return mapper.readValue(resourceLoader.getResource(profilesLocation).getInputStream(), UsersProfile.class);
     }
 }
