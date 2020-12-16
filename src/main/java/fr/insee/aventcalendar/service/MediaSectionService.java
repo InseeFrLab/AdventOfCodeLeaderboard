@@ -1,14 +1,15 @@
 package fr.insee.aventcalendar.service;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import fr.insee.aventcalendar.model.mediaSection.MediaButton;
-import fr.insee.aventcalendar.model.mediaSection.MediaSection;
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import fr.insee.aventcalendar.model.mediaSection.MediaSection;
 
 @Service
 public class MediaSectionService {

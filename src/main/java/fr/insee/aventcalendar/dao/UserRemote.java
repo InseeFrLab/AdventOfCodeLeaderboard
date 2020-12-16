@@ -23,6 +23,7 @@ public class UserRemote implements UserDAO {
 
     @Value("${data.remote.host}")
     private String dataRemoteUrl;
+    
     @Value("${private.group.id}")
     private String groupId;
 
@@ -41,7 +42,7 @@ public class UserRemote implements UserDAO {
             UserList userList = objectMapper.readValue(str, UserList.class);
             this.cache.getUserCache().put(year, userList);
             return userList;
-        };
+        }
         return myValue;
     }
 
