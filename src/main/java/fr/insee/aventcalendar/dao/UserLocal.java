@@ -1,37 +1,42 @@
 package fr.insee.aventcalendar.dao;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import fr.insee.aventcalendar.model.leaderboard.UserList;
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
-import java.io.IOException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import fr.insee.aventcalendar.model.leaderboard.UserList;
 
 @Repository
 public class UserLocal implements UserDAO {
 
-    private ObjectMapper objectMapper;
-    @Value("${assets.data.location}")
-    private String dataLocation;
+	private static final String PERSONS_FILENAME = "persons.json";
 
-    public ObjectMapper getObjectMapper() {
-        return objectMapper;
-    }
+	private ObjectMapper objectMapper;
 
-    public void setObjectMapper(ObjectMapper objectMapper) {
-        this.objectMapper = objectMapper;
-    }
+	@Value("${assets.data.location}")
+	private String dataLocation;
 
-    @Autowired
-    public UserLocal(ObjectMapper newObjectMapper) {
-        objectMapper = newObjectMapper;
-    }
+	public ObjectMapper getObjectMapper() {
+		return objectMapper;
+	}
 
-    @Override
-    public UserList getUsers(String year) throws IOException {
-        UserList userList = objectMapper.readValue(getClass().getResourceAsStream(dataLocation+"persons.json"), UserList.class);
-        return userList;
-    }
+	public void setObjectMapper(ObjectMapper objectMapper) {
+		this.objectMapper = objectMapper;
+	}
+
+	@Autowired
+	public UserLocal(ObjectMapper newObjectMapper) {
+		objectMapper = newObjectMapper;
+	}
+
+	@Override
+	public UserList getUsers(String year) throws IOException {
+		UserList userList = objectMapper.readValue(getClass().getResourceAsStream(dataLocation + PERSONS_FILENAME), UserList.class);
+		return userList;
+	}
 
 }

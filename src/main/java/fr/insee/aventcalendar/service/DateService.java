@@ -1,22 +1,24 @@
 package fr.insee.aventcalendar.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.TimeZone;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service
 public class DateService {
 
     @Autowired
-    private DateFormat dateFormat;
+    private DateTimeFormatter dateTimeFormatter;
+
+    @Autowired
+    private ZoneId zoneId;
 
     public String formatDate(Long timestamp) {
-        Date date = new Date(timestamp*1000);
-        return dateFormat.format(date);
+    	LocalDateTime ldt = LocalDateTime.ofInstant(Instant.ofEpochSecond(timestamp), zoneId);
+        return ldt.format(dateTimeFormatter);
     }
 }

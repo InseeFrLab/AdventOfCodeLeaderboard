@@ -17,25 +17,15 @@ public class UserList {
     }
 
     /**
-     * return member list, sorted by score
+     * return member list, sorted by decreasing star number, then decreasing score, then alphabetical order of username
      * @return
      */
     public List<User> getMembersList() {
         ArrayList<User> result = new ArrayList<User>(this.members.values());
-        result.sort(new Comparator<User>() {
-            @Override
-            public int compare(User user, User t1) {
-                return (t1.getStarNumber() - user.getStarNumber() != 0 ?
-                    t1.getStarNumber() - user.getStarNumber()
-                    :
-                    (t1.getScore() - user.getScore() != 0 ?
-                        t1.getScore() - user.getScore()
-                        :
-                        user.getUsername().toLowerCase().compareTo(t1.getUsername().toLowerCase())
-                    )
-                );
-            }
-        });
+        result.sort(Comparator.comparing(User::getStarNumber)     // first comparing by ascending star number
+        					  .thenComparing(User::getScore)      // then by ascending score
+        					  .reversed()						  // reverse the precedent orders to decreasing star number and descending score
+        				      .thenComparing(User::getUsername)); // finally ascending user name
         return result;
     }
 }
