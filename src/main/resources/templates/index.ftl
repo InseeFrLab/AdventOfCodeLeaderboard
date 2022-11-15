@@ -45,7 +45,7 @@
                         </#if>
                     </#list>
                 </div>
-                <h2 class="text-center" style="display: inline">Challenge ${year!'2022'}</h2>
+                <h2 class="text-center" style="display: inline">Challenge ${year!'2021'}</h2>
                 <table class="table" style="margin-top: 3em">
                     <tr><th></th><th>Joueur</th><th>Etoiles (énigmes résolues)</th><th>Somme des étoiles</th><th>Score (rapidité)</th></tr>
                     <#list persons as user>
