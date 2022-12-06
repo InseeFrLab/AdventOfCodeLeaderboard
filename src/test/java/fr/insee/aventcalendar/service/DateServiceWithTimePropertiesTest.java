@@ -5,9 +5,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 
 @SpringBootTest
-class DateServiceTest {
+@ActiveProfiles("test-with-time-properties")
+class DateServiceWithTimePropertiesTest {
 
     @Autowired
     private DateService dateService;
@@ -15,8 +17,7 @@ class DateServiceTest {
     @Test
     public void shallGetEqualString() {
         Long timestamp = Long.valueOf(0);
-        // In january in Paris, it's winter hour so +1h comparing to UTC
-        assertEquals("01/01/1970 01:00:00", dateService.formatDate(timestamp));
+        assertEquals("01-01-1970T00:00:00", dateService.formatDate(timestamp));
     }
 
 }
